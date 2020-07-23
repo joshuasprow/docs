@@ -54,9 +54,8 @@ spec:
           containers:
           - name: openfaas-cli
             image: openfaas/faas-cli:0.8.3
+            command: ["/bin/sh", "-c"]
             args:
-            - /bin/sh
-            - -c
             - echo "verbose" | faas-cli invoke nodeinfo -g http://gateway.openfaas:8080
           restartPolicy: OnFailure
 ```
